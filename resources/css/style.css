@@ -57,6 +57,9 @@ article h2 a:hover{
     font-weight: 700;
 
 }
+.conteudo{
+    padding: 20px 0;
+}
 .conteudo h1{
     font-size: 25px;
     font-weight: 800;
