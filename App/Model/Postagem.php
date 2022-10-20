@@ -20,4 +20,21 @@ class Postagem{
         return $consulta;
         
     }
+
+    public static function selectId($idpost) {
+        $conn = Connection::getConn();
+
+        $sql = "SELECT * FROM postagem WHERE id = :id";
+		$sql = $conn->prepare($sql);
+		$sql->bindValue(':id', $idpost, PDO::PARAM_INT);
+		$sql->execute();
+        $consulta = [];
+
+        $consulta = $sql->fetchObject('Postagem');
+
+        if(!$consulta) {
+            throw new Exception("Não foi encontrado nenhum resultado na consulta!");
+        }
+        return $consulta;
+    }
 }

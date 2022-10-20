@@ -3,6 +3,7 @@ require_once 'vendor/autoload.php';
 require_once 'App/Core/Core.php';
 require_once 'App/Controller/HomeController.php';
 require_once 'App/Controller/ErroController.php';
+require_once 'App/Controller/PostController.php';
 require_once 'App/Model/Postagem.php';
 require_once 'lib/Database/connection.php';
 

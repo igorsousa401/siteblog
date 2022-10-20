@@ -3,7 +3,7 @@
 class Core{
 
     public function start($urlget) {
-        
+
         $acao = 'index';
 
         if(isset($urlget['pagina'])){
@@ -11,14 +11,18 @@ class Core{
         } else{
             $controller = "HomeController";
         }
-        
-        
 
         if(!class_exists($controller)){
             $controller = 'ErroController';
         }
 
-        call_user_func_array(array(new $controller, $acao), array());
+        if (isset($urlGet['id']) && $urlGet['id'] != null) {
+            $id = $urlGet['id'];
+        } else {
+            $id = null;
+        }
+
+        call_user_func_array(array(new $controller, $acao), []);
         
     }
 
